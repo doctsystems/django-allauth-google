@@ -43,7 +43,9 @@ INSTALLED_APPS = [
     # Other apps
     'allauth',
     'allauth.account',
-    'allauth.socialaccount',
+    'allauth.socialaccount',    
+    'allauth.socialaccount.providers.google',
+    'crispy_forms',
     # My apps
 ]
 
@@ -72,7 +74,7 @@ ROOT_URLCONF = 'djauth.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR / 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -153,3 +155,4 @@ ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
 ACCOUNT_EMAIL_CONFIRMATION_EXPIRE_DAYS = 7
 ACCOUNT_LOGOUT_ON_GET = True
 
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
